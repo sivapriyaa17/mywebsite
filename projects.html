@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Projects</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <style>
+    body {
+      font-family: 'Fira Code', monospace;
+      background-color: #f0f1ff;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    h1, h2 {
+      margin-bottom: 10px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .project-card {
+      background: #fff;
+      width: 100%;
+      margin: 20px 0;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      transform: translateY(50px);
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .project-img {
+      width: 100%;
+      max-height: 250px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .project-link {
+      font-size: 18px;
+      color: #3366cc;
+      text-decoration: none;
+    }
+
+    .project-link:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .project-card {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+   
+    <div class="project-card">
+      <img src="https://via.placeholder.com/800x250?text=Django+Hospital+Login" alt="Project 1" class="project-img"/>
+      <h1>Project 1: Django Hospital Login</h1>
+      <p>This project is built using Django for secure doctor-patient login.</p>
+      <h2>Portfolio</h2>
+      <a class="project-link" href="https://github.com/sivapriyaa17/django-dashboard" target="_blank">Project Link</a>
+    </div>
+
+    
+    <div class="project-card">
+      <img src="https://via.placeholder.com/800x250?text=AI+ML+Hiring+Bot" alt="Project 2" class="project-img"/>
+      <h1>Project 2: AI/ML Chatbot for Hiring Assistant</h1>
+      <p>This project uses an AI/ML-powered chatbot to assist in tech hiring processes.</p>
+      <h2>Portfolio</h2>
+      <a class="project-link" href="https://github.com/sivapriyaa17/django-dashboard" target="_blank">Project Link</a>
+    </div>
+
+   
+    <div class="project-card">
+      <img src="https://via.placeholder.com/800x250?text=Cyber+Threat+Intelligence" alt="Project 3" class="project-img"/>
+      <h1>Project 3: Threat Analysis & Intelligence</h1>
+      <p>This project includes cyber threat detection, honeypots, and threat sharing tools.</p>
+      <h2>Portfolio</h2>
+      <a class="project-link" href="https://github.com/sivapriyaa17/myhoneypot" target="_blank">Project Link</a>
+    </div>
+  
+  <div class="project-card">
+    <img src="https://via.placeholder.com/800x250?" alt="Project 4" class="project-img">
+    <h1>Project 4: Blog App</h1>
+    <p>This project includes creating blog posts editing/deleting 
+        using React.js next.js (Full-stack)</p>
+    <h2>Portfolio</h2>
+    <a class="project-link" href="https://github.com/sivapriyaa17/blogapp" target="_blank">Project Link</a>
+
+  </div>
+  </div>
+
+  <script>
+    
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.utils.toArray(".project-card").forEach((card) => {
+      gsap.to(card, {
+        scrollTrigger: {
+          trigger: card,
+          start: "top 80%",
+          toggleActions: "play none none none"
+        },
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power2.out"
+      });
+    });
+  </script>
+</body>
+</html>
